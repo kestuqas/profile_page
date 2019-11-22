@@ -1,0 +1,24 @@
+{% extends "activity/base.html" %}
+{% block content %}
+	{% for key in activities %}
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ key.title }}</a>
+		      <small class="text-muted">Status: {{ key.author }}</small>
+		    </div>
+		    <p><a class="text-muted" href="#">Start date: {{ key.date_posted }}</a></p>
+		    <p><a class="text-muted" href="#">End date: {{ key.date_posted|date:'F d, Y' }}</a></p>
+		    <p class="article-content">Tags: {{ key.content }}</p>
+		  </div>
+		</article>
+
+
+<!-- 		<h1>{{ key }}</h1>
+		<p>Start date: {{ value.start }} </p>
+		<p>End date: {{ value.end }} </p>
+		<p>Status: {{ value.status }} </p>
+		<p>Feedback: {{ value.feedback }} </p>
+		<p>Tags: {{ value.tags }} </p> -->
+	{% endfor %}
+{% endblock content %}
